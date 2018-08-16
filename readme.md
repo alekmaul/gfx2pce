@@ -1,12 +1,5 @@
 # gfx2pce graphic converter for PC Engine HUC development
 
-==============================  
----gfx2pce v1.0.0 20180816---  
-------------------------------  
-(c) 2013-2018 Alekmaul  
-Based on pcx2snes by Neviksti  
-==============================  
-  
 Usage : gfx2pce [options] bmp/pcx/tga filename ...  
   where filename is a 256 color BMP, PCX or TGA file  
   
