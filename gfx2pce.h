@@ -37,12 +37,12 @@
 
 #include "lodepng.h"
 
-#ifndef GFX2PCEVERSION
+#ifndef __BUILD_VERSION
 #include "config.h"
 #else
 #define GFX2PCEVERSION __BUILD_VERSION
 #define GFX2PCEDATE __BUILD_DATE
-#endif /* GFX2PCEVERSION */
+#endif /* __BUILD_VERSION */
 
 
 //MACROS
