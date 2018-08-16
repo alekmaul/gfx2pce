@@ -1329,7 +1329,7 @@ int main(int argc, char **arg) {
 	// Show something to begin :)
 	if (quietmode == 0) {
 		printf("\n==============================");
-		printf("\n---gfx2pce v"GFX2SNESVERSION" "GFX2SNESDATE"---");
+		printf("\n---gfx2pce v"GFX2PCEVERSION" "GFX2PCEDATE"---");
 		printf("\n------------------------------");
 		printf("\n(c) 2013-2018 Alekmaul ");
 		printf("\nBased on pcx2snes by Neviksti");
