@@ -3,7 +3,7 @@
 
 ## Usage
 ```
-gfx2pce [options] bmp/pcx/tga filename ...  
+gfx2pce [options] png/bmp/pcx/tga filename ...  
 ```
 where filename is a 256 color BMP, PCX or TGA file  
 

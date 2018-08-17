@@ -1269,7 +1269,7 @@ void ConvertPalette(RGB_color *palette, int *new_palette) {
 //////////////////////////////////////////////////////////////////////////////
 void PrintOptions(char *str) {
 	printf("\n\nUsage : gfx2pce [options] bmp/pcx/tga filename ...");
-	printf("\n  where filename is a 256 color BMP, PCX or TGA file");
+	printf("\n  where filename is a 256 color PNG, BMP, PCX or TGA file");
 
 	if(str[0]!=0)
 		printf("\nThe [%s] parameter is not recognized.",str);
