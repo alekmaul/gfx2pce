@@ -1,0 +1,7 @@
+#ifndef GFX2PCE_VERSION_H
+#define GFX2PCE_VERSION_H
+
+#define GFX2PCEVERSION "@VERSION@"
+#define GFX2PCEDATE " __DATE__ "
+
+#endif /* GFX2PCE_VERSION_H */

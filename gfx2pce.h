@@ -37,8 +37,13 @@
 
 #include "lodepng.h"
 
-#define GFX2SNESVERSION __BUILD_VERSION
-#define GFX2SNESDATE __BUILD_DATE
+#ifndef __BUILD_VERSION
+#include "config.h"
+#else
+#define GFX2PCEVERSION __BUILD_VERSION
+#define GFX2PCEDATE __BUILD_DATE
+#endif /* __BUILD_VERSION */
+
 
 //MACROS
 #define HI_BYTE(n)  (((int)n>>8) & 0x00ff)  // extracts the hi-byte of a word
