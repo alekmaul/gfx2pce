@@ -5,7 +5,7 @@
 ```
 gfx2pce [options] png/bmp/pcx/tga filename ...  
 ```
-where filename is a 256 color BMP, PCX or TGA file  
+where filename is a 256 color PNG, BMP, PCX or TGA file  
 
 ## Options
 ### Graphics options 
