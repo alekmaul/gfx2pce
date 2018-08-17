@@ -3,9 +3,9 @@
 
 ## Usage
 ```
-gfx2pce [options] bmp/pcx/tga filename ...  
+gfx2pce [options] png/bmp/pcx/tga filename ...  
 ```
-where filename is a 256 color BMP, PCX or TGA file  
+where filename is a 256 color PNG, BMP, PCX or TGA file  
 
 ## Options
 ### Graphics options 
@@ -28,7 +28,7 @@ where filename is a 256 color BMP, PCX or TGA file
 - `-pR` Palette rounding  
   
 ### File options
-- `-f[bmp|pcx|tga|png]` Convert a bmp or pcx or gta or png file [bmp]  
+- `-f[bmp|pcx|tga|png]` Convert a bmp or pcx or tga or png file [bmp]  
   
 ### Misc options 
 - `-n` No border  
