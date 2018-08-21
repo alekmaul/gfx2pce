@@ -32,22 +32,17 @@
 //INCLUDES
 #include "gfx2pce.h"
 
-//// M A I N   V A R I A B L E S ////////////////////////////////////////////////
-int	border=1;								//options and their defaults
-int size=0;									//
-int screen=0;								//
-int colors=0;								//
-int output_palette=-1;  		//
-int rearrange=0;						//
-int palette_entry=0;				//
-int file_type=1;						// 1 = bmp, 2 = pcx, 3 = tga, 4 = png
-int quietmode=0;						// 0 = not quiet, 1 = i can't say anything :P
-int tile_reduction=1;				// 0 = no tile reduction (warning !)
-int savepalette=1;					// 1 = save the palette
-int savemap=1;							// 1 = save the map
-int blanktile=0;        		// 1 = blank tile generated
-int palette_rnd=0;      		// 1 = round palette up & down
-int tilebase=0x1000;				// default offset for tilebase
+enum FILE_TYPE {
+    BMP_FILE = 1,
+    PCX_FILE,
+    TGA_FILE,
+    PNG_FILE
+};
+
+int quietmode=0;              // 0 = not quiet, 1 = i can't say anything :P
+int blanktile=0;              // 1 = blank tile generated
+int palette_rnd=0;            // 1 = round palette up & down
+int tilebase=0x1000;          // default offset for tilebase
 
 //// F U N C T I O N S //////////////////////////////////////////////////////////
 int PCX_Load(char *filename, pcx_picture_ptr image)
@@ -384,7 +379,7 @@ int TGA_Load(char *filename, pcx_picture_ptr image)
 	// within the picture structure, the separate images can be grabbed from this
 	// buffer later.  also the header and palette are loaded
 	FILE *fp;
-	unsigned long index,i;
+	long index,i;
 	tga_header tgahead;
 	pcx_header *header;
 
@@ -458,13 +453,14 @@ int TGA_Load(char *filename, pcx_picture_ptr image)
 
 int PNG_Load(char *filename, pcx_picture_ptr image)
 {
-  unsigned error, index, i,sz,bpp;
+  unsigned error,sz,bpp;
+  long i,index;
   unsigned char *pngimage;
   unsigned char* png = 0;
   size_t pngsize;
   LodePNGState state;
-  size_t width, height;// , wal,hal;
-	pcx_header *header;
+  unsigned int width, height;// , wal,hal;
+  pcx_header *header;
 
   /*optionally customize the state*/
   lodepng_state_init(&state);
@@ -685,7 +681,7 @@ unsigned char *ArrangeBlocks( unsigned char *img, int width, int height,
 //////////////////////////////////////////////////////////////////////////////
 
 int *MakeMap(unsigned char *img, int *num_tiles,
-			 int xsize, int ysize, int tile_x, int tile_y, int colors, int rearrange, int pal_entry)
+			 int xsize, int ysize, int tile_x, int tile_y, int colors, int rearrange, int pal_entry, int tile_reduction)
 {
 	int *map;
 	unsigned char blank[64];
@@ -1324,8 +1320,21 @@ int main(int argc, char **arg) {
 
 	char filebase[256]="";
 	char filename[256];
+
 	int i, j;
 
+    int border=1;
+    int size=0;
+    int screen=0;
+    int colors=0;
+    int output_palette=-1;
+    int rearrange=0;
+    int palette_entry=0;
+    int file_type=BMP_FILE;
+    int tile_reduction=1;         // 0 = no tile reduction (warning !)
+    int savepalette=1;            // 1 = save the palette
+    int savemap=1;                // 1 = save the map
+    
 	// Show something to begin :)
 	if (quietmode == 0) {
 		printf("\n==============================");
@@ -1713,7 +1722,7 @@ int main(int argc, char **arg) {
 
 		//make the tile map now
 		tilemap=MakeMap(buffer, &num_tiles, xsize, ysize,
-					tile_x, tile_y, colors, rearrange, palette_entry);
+					tile_x, tile_y, colors, rearrange, palette_entry, tile_reduction);
 		if(tilemap==NULL)
 		{
 			free(buffer);
