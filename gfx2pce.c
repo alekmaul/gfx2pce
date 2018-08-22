@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------
 
-	Copyright (C) 2012-2017
+	Copyright (C) 2012-2018
 		Alekmaul 
 
 	This software is provided 'as-is', without any express or implied
@@ -530,7 +530,7 @@ int PNG_Load(char *filename, pcx_picture_ptr image)
 			for(i=0;i<header->width;i++)
 				image->buffer[index+i] = pngimage[i +index*header->height];
 		}
-		/*
+		@TODO TODDO
       // get buffer size
 			*size = (wAligned / 2) * hAligned;
 			// and alloc
@@ -557,7 +557,7 @@ int PNG_Load(char *filename, pcx_picture_ptr image)
 			}
 			for(;i < hAligned; i++)
 				memset(&result[i * (wAligned / 2)], 0, wAligned / 2);
-			*/
+		@TODO TODDO
 	}
 	// 8 bpps conversion
 	else {
