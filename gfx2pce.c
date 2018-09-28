@@ -1277,7 +1277,6 @@ void PrintOptions(char *str) {
 	printf("\n\n--- Map options ---");
 	printf("\n-m!               Exclude map from output");
 	printf("\n-m                Convert the whole picture");
-	printf("\n-mp               Convert the whole picture with high priority");
 	printf("\n-mn#              Generate the whole picture with an offset for tile number");
 	printf("\n                   where # is the offset in decimal (0 to 2047)");
 	printf("\n-mR!              No tile reduction (not advised)");

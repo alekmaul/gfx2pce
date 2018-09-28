@@ -1,1 +1,1 @@
-<Project name="gfx2pce"><File path="gfx2snes.c"></File><File path="Makefile"></File><File path="lodepng.c"></File><File path="lodepng.h"></File><File path="gfx2snes.h"></File></Project>
+<Project name="gfx2pce"><File path="readme.md"></File><File path="CMakeLists.txt"></File><File path="config.h.in"></File><File path="gfx2pce.c"></File><File path="gfx2pce.h"></File><File path="lodepng.c"></File><File path="lodepng.h"></File><File path="Makefile"></File></Project>
